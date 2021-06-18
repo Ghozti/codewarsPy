@@ -12,4 +12,6 @@ class PrinterErrors:
         return str(errcount) + "/" + str(len(txt))
 
 
+class FriendOrFoe:
+
 
