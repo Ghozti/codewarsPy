@@ -14,4 +14,11 @@ class PrinterErrors:
 
 class FriendOrFoe:
 
+    def friend_or_foe(self,lst):
 
+        friend_list = []
+
+        for item in lst:
+            if len(item) == 4:
+                friend_list.append(item)
+        return friend_list

@@ -1,5 +1,5 @@
-from KYU7.kyu7 import PrinterErrors
+from KYU7.kyu7 import FriendOrFoe
 
-pe = PrinterErrors()
+c = FriendOrFoe()
 
-print(pe.printer_error(""))
+print(c.friend_or_foe(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
