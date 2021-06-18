@@ -1,2 +1,5 @@
-from KYU6.kyu6 import alphabet_position
+from KYU7.kyu7 import PrinterErrors
 
+pe = PrinterErrors()
+
+print(pe.printer_error(""))
