@@ -22,3 +22,4 @@ class FriendOrFoe:
             if len(item) == 4:
                 friend_list.append(item)
         return friend_list
+
