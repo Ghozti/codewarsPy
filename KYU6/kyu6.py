@@ -99,3 +99,17 @@ class BreakCamelCase:
 
         return fstr
 
+
+class CountString:
+
+    def count(self, txt):
+
+        chars = []
+        dic = {}
+
+        for char in txt:
+            if char not in chars:
+                chars.append(char)
+                dic[char] = txt.count(char)
+
+        return dic
