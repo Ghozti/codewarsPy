@@ -67,3 +67,35 @@ class FormatNameList:
                 else:
                     txt += ", " + nameList[i]
             return txt
+
+
+class BreakCamelCase:
+
+    def break_camel(self, txt):
+
+        lst = []
+        indlst = []
+
+        for char in txt:
+            lst.append(char)
+
+        num_of_camels = 0
+
+        for char in range(len(lst)):
+            if ord(lst[char]) >= 65 and ord(lst[char]) <= 90:
+                num_of_camels += 1
+                if num_of_camels > 1:
+                    indlst.append(char + num_of_camels-1)
+                else:
+                    indlst.append(char)
+
+        for ind in indlst:
+            lst.insert(ind, " ")
+
+        fstr = ""
+
+        for i in lst:
+            fstr += i
+
+        return fstr
+
