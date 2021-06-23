@@ -85,7 +85,7 @@ class BreakCamelCase:
             if ord(lst[char]) >= 65 and ord(lst[char]) <= 90:
                 num_of_camels += 1
                 if num_of_camels > 1:
-                    indlst.append(char + num_of_camels-1)
+                    indlst.append(char + num_of_camels - 1)
                 else:
                     indlst.append(char)
 
@@ -116,3 +116,50 @@ class CountString:
 
 
 class StreetFighter:
+
+    def select_fighter(self, fighters, init_pos, moves):
+        fighters = [
+            ["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
+            ["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"]
+        ]  # 2d array containing the fighters
+
+        init_pos = [1, 1]  # x,y
+
+        move_dicX = {
+            "up": 1,
+            "down": -1,
+        }
+
+        move_dicY = {
+            "left": -1,
+            "right": 1
+        }
+
+        fighters_passed = []
+
+        for move in moves:
+            if move not in move_dicX:
+                move_dicX.setdefault(move, 0)
+            else:
+                init_pos[0] = move_dicX.get(move)
+
+                if init_pos[0] > 2:
+                    init_pos[0] = 2
+                elif init_pos[0] < 1:
+                    init_pos[0] = 1
+
+                fighters_passed.append(fighters[init_pos[0]][0])
+
+            if move not in move_dicY:
+                move_dicY.setdefault(move, 0)
+            else:
+                init_pos[1] = move_dicY.get(move)
+
+                if init_pos[1] > 6:
+                    init_pos[1] = 6
+                elif init_pos[1] < 1:
+                    init_pos[1] = 1
+
+                fighters_passed.append(fighters[0][init_pos[1]])
+
+            return fighters_passed
