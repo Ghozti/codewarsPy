@@ -113,3 +113,6 @@ class CountString:
                 dic[char] = txt.count(char)
 
         return dic
+
+
+class StreetFighter:
