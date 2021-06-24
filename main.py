@@ -1,11 +1,6 @@
 from KYU7.kyu7 import FriendOrFoe
-from KYU6.kyu6 import FormatNameList
-from KYU6.kyu6 import StreetFighter
+from KYU6.kyu6 import Unique_order
 
-# c = FriendOrFoe()
+x = Unique_order()
 
-# print(c.friend_or_foe(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
-
-x = StreetFighter()
-
-print(x.street_fighter_selection(None, [0, 0], ["right"]*8))
+print(x.order("abaA112233"))
