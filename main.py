@@ -8,4 +8,4 @@ from KYU6.kyu6 import StreetFighter
 
 x = StreetFighter()
 
-print(x.select_fighter(None, [0, 0], ["left"] * 8))
+print(x.street_fighter_selection(None, [0, 0], ["right"]*8))

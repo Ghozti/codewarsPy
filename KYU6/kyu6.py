@@ -117,49 +117,50 @@ class CountString:
 
 class StreetFighter:
 
-    def select_fighter(self, fighters, init_pos, moves):
+    def street_fighter_selection(self, fighters, init_pos, moves):
         fighters = [
             ["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
             ["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"]
         ]  # 2d array containing the fighters
 
-        init_pos = [1, 1]  # x,y
+        init_pos = [0, 0]  # x,y
 
         move_dicX = {
-            "up": 1,
-            "down": -1,
+            "left": -1,
+            "right": 1
         }
 
         move_dicY = {
-            "left": -1,
-            "right": 1
+            "up": -1,
+            "down": 1,
         }
 
         fighters_passed = []
 
         for move in moves:
+
             if move not in move_dicX:
                 move_dicX.setdefault(move, 0)
             else:
-                init_pos[0] = move_dicX.get(move)
 
-                if init_pos[0] > 2:
-                    init_pos[0] = 2
-                elif init_pos[0] < 1:
-                    init_pos[0] = 1
+                init_pos[1] += move_dicX.get(move)
 
-                fighters_passed.append(fighters[init_pos[0]][0])
+                if init_pos[1] > 5:
+                    init_pos[1] = 0
+                elif init_pos[1] < -5:
+                    init_pos[1] = 0
 
             if move not in move_dicY:
                 move_dicY.setdefault(move, 0)
             else:
-                init_pos[1] = move_dicY.get(move)
 
-                if init_pos[1] > 6:
-                    init_pos[1] = 6
-                elif init_pos[1] < 1:
-                    init_pos[1] = 1
+                init_pos[0] += move_dicY.get(move)
 
-                fighters_passed.append(fighters[0][init_pos[1]])
+                if init_pos[0] > 0:
+                    init_pos[0] = 1
+                elif init_pos[0] < 0:
+                    init_pos[0] = 0
+            fighters_passed.append(fighters[init_pos[0]][init_pos[1]])
 
-            return fighters_passed
+        return fighters_passed
+
