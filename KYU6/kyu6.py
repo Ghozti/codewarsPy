@@ -166,22 +166,52 @@ class StreetFighter:
 
 
 class Unique_order:
+
     def order(self, txt):
 
         ordered_list = []
-        stxt = str(txt)
 
         valid_chars_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
                             "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
                             "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2",
-                            "3", "4", "5", "6", "7", "8", "9", "0"
+                            "3", "4", "5", "6", "7", "8", "9", "0", 1, 2,
+                            3, 4, 5, 6, 7, 8, 9, 0
                             ]
 
-        for char in stxt:
-            if len(ordered_list) == 0:
-                ordered_list.append(char)
-            elif len(ordered_list) != 0 and ordered_list[
-                len(ordered_list) - 1] is not char and char in valid_chars_list:
-                ordered_list.append(char)
+        num_dic = {"1": 1,
+                   "2": 2,
+                   "3": 3,
+                   "4": 4,
+                   "5": 5,
+                   "6": 6,
+                   "7": 7,
+                   "8": 8,
+                   "9": 9,
+                   "0": 0,
+                   }
+        ntxt = []
 
+        for i in txt:
+            ntxt.append(i)
+
+        for char in ntxt:
+            if len(ordered_list) == 0:
+                if char in valid_chars_list:
+                    if char in num_dic:
+                        ordered_list.append(num_dic.get(char))
+                    else:
+                        ordered_list.append(char)
+            else:
+                if char in valid_chars_list:
+                    if char in num_dic:
+
+                        if num_dic.get(ordered_list[len(ordered_list)-1]) != num_dic.get(char):
+                            ordered_list.append(num_dic.get(char))
+                    else:
+                        if ordered_list[len(ordered_list)-1] != char:
+                            print(len(ntxt))
+                            print(char)
+                            print(ordered_list[len(ordered_list)-1])
+                            ordered_list.append(char)
         return ordered_list
+
