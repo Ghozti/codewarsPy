@@ -205,15 +205,25 @@ class Unique_order:
                 if char in valid_chars_list:
                     if char in num_dic:
 
-                        if num_dic.get(ordered_list[len(ordered_list)-1]) != num_dic.get(char):
+                        if num_dic.get(ordered_list[len(ordered_list) - 1]) != num_dic.get(char):
                             ordered_list.append(num_dic.get(char))
                     else:
-                        if ordered_list[len(ordered_list)-1] != char:
+                        if ordered_list[len(ordered_list) - 1] != char:
                             print(len(ntxt))
                             print(char)
-                            print(ordered_list[len(ordered_list)-1])
+                            print(ordered_list[len(ordered_list) - 1])
                             ordered_list.append(char)
         return ordered_list
 
 
-class FindOdd
+class FindOdd:
+
+    def find_odd(self, seq):
+        strseq = ""
+        for i in seq:
+            strseq += (str(i))
+
+        for i in strseq:
+            if strseq.count(i) % 2 != 0:
+                return i
+
