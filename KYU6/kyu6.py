@@ -216,4 +216,4 @@ class Unique_order:
         return ordered_list
 
 
-class TortoiseRacing:
+class FindOdd
