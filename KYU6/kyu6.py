@@ -219,11 +219,7 @@ class Unique_order:
 class FindOdd:
 
     def find_odd(self, seq):
-        strseq = ""
         for i in seq:
-            strseq += (str(i))
-
-        for i in strseq:
-            if strseq.count(i) % 2 != 0:
+            if seq.count(i) % 2 != 0:
                 return i
 
