@@ -226,7 +226,7 @@ class FindOdd:
 
 class Highest_Rank:
 
-    def get_highest_rank(self,lst):
+    def get_highest_rank(self, lst):
         highest_num = 0
 
         for i in lst:
@@ -240,3 +240,23 @@ class Highest_Rank:
 
 
 class MazeRunner:
+    def maze_run(self, lst):
+
+        move_dic = {
+            "N": 1,
+            "S": -1,
+            "E": 1,
+            "W": -1
+        }
+
+        current_status = ""
+        start_pos = []
+
+        for i in range(len(lst)):
+            for o in range(len(lst[i])):
+                if lst[i][o] == 2:
+                    start_pos.append(i)
+                    start_pos.append(o)
+
+
+
