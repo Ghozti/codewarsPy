@@ -225,3 +225,16 @@ class FindOdd:
 
 
 class Highest_Rank:
+
+    def get_highest_rank(self,lst):
+        highest_num = 0
+
+        for i in lst:
+            if lst.count(i) > lst.count(highest_num):
+                highest_num = i
+            elif lst.count(i) == lst.count(highest_num):
+                if i > highest_num:
+                    highest_num = i
+
+        return highest_num
+
