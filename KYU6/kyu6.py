@@ -240,17 +240,18 @@ class Highest_Rank:
 
 
 class MazeRunner:
-    def maze_run(self, lst):
+    def maze_run(self, lst, moves):
 
         move_dic = {
-            "N": 1,
-            "S": -1,
+            "N": -1,
+            "S": 1,
             "E": 1,
             "W": -1
         }
 
         current_status = ""
         start_pos = []
+        current_pos = []
 
         for i in range(len(lst)):
             for o in range(len(lst[i])):
@@ -258,5 +259,25 @@ class MazeRunner:
                     start_pos.append(i)
                     start_pos.append(o)
 
+        current_pos = start_pos
 
+        for i in moves:
+            if i == "N" or i == "S":
+                current_pos[0] += move_dic.get(i)
+            elif i == "E" or i == "W":
+                current_pos[1] += move_dic.get(i)
+
+            if current_pos[0] < 0 or current_pos[0] > 6 or current_pos[1] < 0 or current_pos[1] > 6:
+                current_status = "Dead"
+                break
+            elif lst[current_pos[0]][current_pos[1]] == 1:
+                current_status = "Dead"
+                break
+            elif lst[current_pos[0]][current_pos[1]] == 3:
+                current_status = "Finish"
+                break
+            else:
+                current_status = "Lost"
+
+        return current_status
 
