@@ -1,6 +1,12 @@
 from KYU7.kyu7 import FriendOrFoe
-from KYU6.kyu6 import FindOdd
+from KYU5.kyu5 import FindDomain
 
-x = FindOdd()
+x = FindDomain()
 
-print(x.find_odd([1,1,2,2,3,3,5,5,4,4,4]))
+print(x.find_dom("google.co.jp"))
+print(x.find_dom("http://google.com"))
+print(x.find_dom("www.xakep.ru"))
+print(x.find_dom("https://youtube.com"))
+print(x.find_dom("r99p4svj4av9hgu7wac2kecoerror"))
+
+
