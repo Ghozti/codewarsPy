@@ -224,3 +224,4 @@ class FindOdd:
                 return i
 
 
+class Highest_Rank:
