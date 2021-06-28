@@ -238,3 +238,5 @@ class Highest_Rank:
 
         return highest_num
 
+
+class MazeRunner:
