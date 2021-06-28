@@ -267,7 +267,7 @@ class MazeRunner:
             elif i == "E" or i == "W":
                 current_pos[1] += move_dic.get(i)
 
-            if current_pos[0] < 0 or current_pos[0] > 6 or current_pos[1] < 0 or current_pos[1] > 6:
+            if current_pos[0] < 0 or current_pos[0] > len(lst[0])-1 or current_pos[1] < 0 or current_pos[1] > len(lst[0])-1:
                 current_status = "Dead"
                 break
             elif lst[current_pos[0]][current_pos[1]] == 1:
