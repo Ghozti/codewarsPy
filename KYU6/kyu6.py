@@ -281,3 +281,39 @@ class MazeRunner:
 
         return current_status
 
+
+class Vowel_Coder:
+
+    vowel_dic = {
+        "a":"1",
+        "e":"2",
+        "i": "3",
+        "o": "4",
+        "u": "5",
+    }
+
+    decode_vowel_dic = {
+        "1":"a",
+        "2":"e",
+        "3": "i",
+        "4": "o",
+        "5": "u",
+    }
+
+    def encode(self,txt):
+        sentence = ""
+        for i in txt:
+            if i.lower() in self.vowel_dic:
+                sentence += self.vowel_dic.get(i.lower())
+            else:
+                sentence += i
+        return sentence
+
+    def decoded(self,txt):
+        senetnce = ""
+        for i in txt:
+            if i in self.decode_vowel_dic:
+                senetnce += self.decode_vowel_dic.get(i)
+            else:
+                senetnce += i
+
