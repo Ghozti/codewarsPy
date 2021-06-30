@@ -317,3 +317,4 @@ class Vowel_Coder:
             else:
                 senetnce += i
 
+class Duplicate_Encoder:
