@@ -15,4 +15,9 @@ class FindDomain:
 
         return dom
 
-class ROT13
+class ROT13:
+    def rot13(self,message):
+        txt = ""
+        for i in message:
+            txt += chr(ord(i)+13)
+        return txt

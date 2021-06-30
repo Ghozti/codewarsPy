@@ -1,5 +1,5 @@
-from KYU6.kyu6 import Duplicate_Encoder
+from KYU5.kyu5 import ROT13
 
-x = Duplicate_Encoder()
+x = ROT13()
 
-print(x.dupe_encoder("din"))
+print(x.rot13("test"))
