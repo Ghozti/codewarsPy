@@ -1,5 +1,5 @@
-from KYU6.kyu6 import Vowel_Coder
+from KYU6.kyu6 import Duplicate_Encoder
 
-x = Vowel_Coder()
+x = Duplicate_Encoder()
 
-print(x.encode("hello"))
+print(x.dupe_encoder("din"))

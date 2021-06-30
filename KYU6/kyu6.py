@@ -318,3 +318,14 @@ class Vowel_Coder:
                 senetnce += i
 
 class Duplicate_Encoder:
+
+    def dupe_encoder(self,txt):
+        ntxt = ""
+        for i in txt:
+            if txt.count(i) > 1:
+                ntxt += ")"
+            else:
+                ntxt += "("
+
+        return ntxt
+
