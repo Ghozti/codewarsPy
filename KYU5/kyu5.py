@@ -14,3 +14,5 @@ class FindDomain:
             dom = dom.rsplit("/")[0]
 
         return dom
+
+class ROT13
