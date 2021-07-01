@@ -1,5 +1,5 @@
-from KYU5.kyu5 import ROT13
+from KYU5.kyu5 import Connect4
 
-x = ROT13()
+x = Connect4()
 
-print(x.rot13("test"))
+x.play(0)

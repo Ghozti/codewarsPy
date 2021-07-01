@@ -82,3 +82,24 @@ class ROT13:
 
 
 class Connect4:
+
+    player1Go = True
+
+    def play(self,col):
+        gameChart = [
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0]
+        ]
+
+        for i in range(5,0):
+            if gameChart[i][col] != 0:
+                if self.player1Go:
+                    gameChart[i][col] = 1
+                else:
+                    gameChart[i][col] = 2
+
+        print(gameChart)
