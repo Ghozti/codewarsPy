@@ -80,3 +80,5 @@ class ROT13:
 
         return txt
 
+
+class Connect4:
