@@ -127,23 +127,27 @@ class Connect4:
         v_same_num_count = 0
         v_win = False
 
-        for row in range(6):
-            for i in range(len(table)-1):
-                if table[row][i] == 1:
+        for row in range(7):
+            for i in range(6):
+                if table[i][row] == 1:
                     v_same_num_count += 1
+                else:
+                    v_same_num_count = 0
 
-            if v_same_num_count == 4:
-                print("***")
+                if v_same_num_count == 4:
+                    print("***")
 
-        # horizontal win
+        # horizontal
 
         h_same_num_count = 0
         h_win = False
 
         for row in range(6):
-            for i in range(len(table)-1):
+            for i in range(7):
                 if table[row][i] == 1:
-                    v_same_num_count += 1
+                    h_same_num_count += 1
+                else:
+                    h_same_num_count = 0
 
-            if v_same_num_count == 4:
-                print("***")
+                if h_same_num_count == 4:
+                    print("*9*")
