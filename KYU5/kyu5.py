@@ -85,10 +85,10 @@ class Connect4:
     player1Go = True
 
     gameChart = [
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0]
     ]
@@ -151,3 +151,11 @@ class Connect4:
 
                 if h_same_num_count == 4:
                     print("*9*")
+
+        # diagonal
+
+        d_same_num_count = 0
+        d_win = False
+
+        for row in range(7):
+            for i in range(6):
