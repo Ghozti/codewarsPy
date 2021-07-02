@@ -82,24 +82,52 @@ class ROT13:
 
 
 class Connect4:
-
     player1Go = True
 
-    def play(self,col):
+    def play(self, col):
         gameChart = [
-            [0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0]
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0]
         ]
 
-        for i in range(5,0):
-            if gameChart[i][col] != 0:
+        i = 5
+
+        while i != 0:
+
+            if gameChart[i][col] == 0:
                 if self.player1Go:
                     gameChart[i][col] = 1
+                    break
                 else:
                     gameChart[i][col] = 2
+                    break
+            else:
+                i -= 1
+        else:
+            return "Collum full!"
 
-        print(gameChart)
+        print(gameChart[0])
+        print(gameChart[1])
+        print(gameChart[2])
+        print(gameChart[3])
+        print(gameChart[4])
+        print(gameChart[5])
+
+        self.checkForWin(gameChart)
+
+    def checkForWin(self, table):
+
+        # vertical win
+
+        veritical_ind = 0
+        v_same_num_count = 0
+
+        for row in range(len(table)):
+            if table[row][veritical_ind] == 1:
+                v_same_num_count += 1
+            else:
+                v_same_num_count = 0
