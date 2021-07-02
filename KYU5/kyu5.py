@@ -84,50 +84,66 @@ class ROT13:
 class Connect4:
     player1Go = True
 
+    gameChart = [
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0]
+    ]
+
     def play(self, col):
-        gameChart = [
-            [0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0]
-        ]
 
         i = 5
 
         while i != 0:
 
-            if gameChart[i][col] == 0:
+            if self.gameChart[i][col] == 0:
                 if self.player1Go:
-                    gameChart[i][col] = 1
+                    self.gameChart[i][col] = 1
                     break
                 else:
-                    gameChart[i][col] = 2
+                    self[i][col] = 2
                     break
             else:
                 i -= 1
         else:
             return "Collum full!"
 
-        print(gameChart[0])
-        print(gameChart[1])
-        print(gameChart[2])
-        print(gameChart[3])
-        print(gameChart[4])
-        print(gameChart[5])
+        print(self.gameChart[0])
+        print(self.gameChart[1])
+        print(self.gameChart[2])
+        print(self.gameChart[3])
+        print(self.gameChart[4])
+        print(self.gameChart[5])
 
-        self.checkForWin(gameChart)
+        self.checkForWin(self.gameChart)
 
     def checkForWin(self, table):
 
         # vertical win
 
-        veritical_ind = 0
         v_same_num_count = 0
+        v_win = False
 
-        for row in range(len(table)):
-            if table[row][veritical_ind] == 1:
-                v_same_num_count += 1
-            else:
-                v_same_num_count = 0
+        for row in range(6):
+            for i in range(len(table)-1):
+                if table[row][i] == 1:
+                    v_same_num_count += 1
+
+            if v_same_num_count == 4:
+                print("***")
+
+        # horizontal win
+
+        h_same_num_count = 0
+        h_win = False
+
+        for row in range(6):
+            for i in range(len(table)-1):
+                if table[row][i] == 1:
+                    v_same_num_count += 1
+
+            if v_same_num_count == 4:
+                print("***")
