@@ -1,6 +1,5 @@
-from KYU5.kyu5 import Connect4
+from KYU6.kyu6 import NewCashier
 
-x = Connect4()
+x = NewCashier()
 
-x.play(0)
-print()
+print(x.get_order("pizzachickenfriesburgercokemilkshakefriessandwich"))

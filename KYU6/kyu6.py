@@ -331,3 +331,38 @@ class Duplicate_Encoder:
 
 
 class NewCashier:
+
+    # Menu order:
+    # 1. Burger
+    # 2. Fries
+    # 3. Chicken
+    # 4. Pizza
+    # 5. Sandwich
+    # 6. Onionrings
+    # 7. Milkshake
+    # 8. Coke
+
+    def get_order(self,order):
+
+        menu = ["burger","fries","chicken","pizza","sandwich","onionrings","milkshake","coke"]
+
+        lst = []
+
+        orderedList = []
+
+        current_word = []
+
+        for i in order:
+            current_word.append(i)
+            word = ""
+            for j in current_word:
+                word += j
+
+            if word in menu:
+                lst.append(word)
+                current_word = []
+
+        for i in range(len(lst)):
+            if
+
+        return orderedList
