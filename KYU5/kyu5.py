@@ -85,10 +85,10 @@ class Connect4:
     player1Go = True
 
     gameChart = [
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0]
     ]
@@ -156,12 +156,13 @@ class Connect4:
 
         d_same_num_count = 0
         d_win = False
-
-        matrix_as_list = []
         diaglist = []
 
-        for i in range(len(table)):
-            for o in range(len(table[i])):
-                matrix_as_list.append(table[i][o])
-
-
+        for ind in range(3, 7):
+            temp_ind = ind
+            newlist = []
+            while temp_ind != 0:
+                for lst in range(len(table)):
+                    print(table[lst][temp_ind])
+                    temp_ind -= 1
+            

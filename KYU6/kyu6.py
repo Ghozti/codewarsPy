@@ -329,3 +329,5 @@ class Duplicate_Encoder:
 
         return ntxt
 
+
+class NewCashier:
