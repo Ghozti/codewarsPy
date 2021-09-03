@@ -363,6 +363,11 @@ class NewCashier:
                 current_word = []
 
         for i in range(len(lst)):
-            if
+                print()
 
         return orderedList
+
+class LongestPalindrome:
+
+    def solution(self, str):
+        pass
